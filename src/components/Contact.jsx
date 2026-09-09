@@ -2,9 +2,9 @@ import React from 'react';
 import { MapPin, Phone, Mail, Clock, MessageCircle, ExternalLink } from 'lucide-react';
 import { STUDIO_INFO } from '../data/studioData';
 
-export default function Contact() {
+export default function Contact({ id = 'contact' }) {
   return (
-    <section id="contact" className="section_padding">
+    <section id={id} className="section_padding">
       <div className="container">
         <div className="section_title">
           <span className="subtitle font-modernline">Visit & Connect</span>

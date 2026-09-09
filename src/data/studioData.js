@@ -18,15 +18,15 @@ export const STUDIO_INFO = {
 };
 
 export const CATEGORIES = [
-  { id: 'all', name: 'All', label: 'Semua Koleksi' },
+  { id: 'all', name: 'All', label: 'Semua' },
   { id: 'Prewedding', name: 'Prewedding', label: 'Prewedding', cover: '/portfolio/Prewedding/08_DSCF2216.jpg', desc: 'Romansa abadi berdua dalam estetika elegan dan hangat' },
   { id: 'Graduation', name: 'Graduation', label: 'Wisuda', cover: '/portfolio/Graduation/01_DSCF0311.jpg', desc: 'Rayakan pencapaian terbaik bersama jubah kebanggaan' },
   { id: 'Family', name: 'Family', label: 'Keluarga', cover: '/portfolio/Family/01_DSCF0010.jpg', desc: 'Kehangatan & tawa keluarga dalam satu frame penuh makna' },
-  { id: 'Group', name: 'Group', label: 'Sahabat & Grup', cover: '/portfolio/Group/01_DSCF0105.jpg', desc: 'Momen kebersamaan seru bersama sahabat terdekat' },
-  { id: 'Maternity', name: 'Maternity', label: 'Kehamilan', cover: '/portfolio/Maternity/01_DSCF1011.jpg', desc: 'Perjalanan cinta menyambut kehadiran buah hati tersayang' },
-  { id: 'Model', name: 'Model', label: 'Fashion & Model', cover: '/portfolio/Model/07_dasha-25-juli-20254413.jpg', desc: 'Editorial look, lookbook komersial, & portfolio modelling' },
-  { id: 'Personal', name: 'Personal', label: 'Personal Portrait', cover: '/portfolio/Personal/02_DSCF1440.jpg', desc: 'Eksplorasi karakter & profil diri dengan pencahayaan sinematik' },
-  { id: 'Birthday', name: 'Birthday', label: 'Ulang Tahun & Kids', cover: '/portfolio/Birthday/01_DSCF6667_.jpg', desc: 'Kemeriahan hari spesial bertabur senyum ceria' }
+  { id: 'Group', name: 'Group', label: 'Group', cover: '/portfolio/Group/01_DSCF0105.jpg', desc: 'Momen kebersamaan seru bersama sahabat terdekat' },
+  { id: 'Maternity', name: 'Maternity', label: 'Maternity', cover: '/portfolio/Maternity/01_DSCF1011.jpg', desc: 'Perjalanan cinta menyambut kehadiran buah hati tersayang' },
+  { id: 'Model', name: 'Model', label: 'Model', cover: '/portfolio/Model/07_dasha-25-juli-20254413.jpg', desc: 'Editorial look, lookbook komersial, & portfolio modelling' },
+  { id: 'Personal', name: 'Personal', label: 'Personal', cover: '/portfolio/Personal/02_DSCF1440.jpg', desc: 'Eksplorasi karakter & profil diri dengan pencahayaan sinematik' },
+  { id: 'Birthday', name: 'Birthday', label: 'Birthday', cover: '/portfolio/Birthday/01_DSCF6667_.jpg', desc: 'Kemeriahan hari spesial bertabur senyum ceria' }
 ];
 
 export const PACKAGES = [

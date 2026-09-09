@@ -23,14 +23,14 @@ export default function FAQPage() {
 
       <section id="faq-content" className="section_padding">
         <div className="container">
-          <div className="section_title" style={{ textAlign: 'center', marginBottom: '44px' }}>
-            <span className="subtitle font-modernline" style={{ display: 'block', fontSize: '1.8rem', color: 'var(--color-primary)', marginBottom: '4px' }}>
+          <div className="section_title">
+            <span className="subtitle font-modernline">
               Frequently Asked
             </span>
-            <h2 className="font-bangla" style={{ fontSize: '2.4rem', color: 'var(--color-dark)' }}>
+            <h2 className="font-bangla">
               Questions & Answers
             </h2>
-            <p style={{ color: 'var(--color-muted)', maxWidth: '560px', margin: '12px auto 0' }}>
+            <p>
               Informasi lengkap seputar pemesanan jadwal, persiapan sesi photoshoot, dan ketentuan layanan di 70 Studio.
             </p>
           </div>

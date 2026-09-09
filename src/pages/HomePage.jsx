@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Banner from '../components/Banner';
 import CategoryShowcase from '../components/CategoryShowcase';
 import About from '../components/About';
+import Contact from '../components/Contact';
 import Lightbox from '../components/Lightbox';
 import SEO from '../components/SEO';
 
@@ -28,6 +29,9 @@ export default function HomePage() {
 
       {/* About Section */}
       <About />
+
+      {/* Contact Section */}
+      <Contact />
 
       {/* Lightbox for previewing photos */}
       {lightbox.open && (
