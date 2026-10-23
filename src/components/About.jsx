@@ -1,29 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
+import { portfolioItems } from '../data/studioData';
+import { api } from '../utils/api';
+import { API_ENDPOINTS } from '../utils/endpoints';
+import { getImageUrl } from '../utils/request';
 
-/* Interior & facility photos of 70 Studio from assets/foto-studio */
-const STUDIO_IMAGES = [
-  '/foto-studio/studio-1.jpg',
-  '/foto-studio/studio-2.jpg',
-  '/foto-studio/studio-3.jpg'
-];
+/* Default representative portfolio photos as fallback */
+const DEFAULT_PORTFOLIO_SLIDES = portfolioItems.slice(0, 6).map((item) => item.src);
 
 export default function About({ id = 'about' }) {
+  const [slides, setSlides] = useState(DEFAULT_PORTFOLIO_SLIDES);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [fadeClass, setFadeClass] = useState('about_slide_visible');
 
-  /* Auto-advance studio photo slideshow with smooth fade */
+  // Fetch portfolio images dynamically from API
   useEffect(() => {
+    let isMounted = true;
+    async function loadPortfolioImages() {
+      try {
+        const res = await api.get(API_ENDPOINTS.PORTFOLIOS.LIST, { params: { limit: 8 } });
+        if (res.data?.success && res.data.data?.length > 0) {
+          if (isMounted) {
+            const apiImages = res.data.data.map((p) => getImageUrl(p.image_url));
+            setSlides(apiImages);
+          }
+        }
+      } catch (err) {
+        // Fallback to default portfolio items
+      }
+    }
+
+    loadPortfolioImages();
+    return () => { isMounted = false; };
+  }, []);
+
+  /* Auto-advance portfolio photo slideshow with smooth fade */
+  useEffect(() => {
+    if (slides.length <= 1) return;
     const interval = setInterval(() => {
       setFadeClass('about_slide_hidden');
       setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % STUDIO_IMAGES.length);
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
         setFadeClass('about_slide_visible');
-      }, 800);
+      }, 700);
     }, 4500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section id={id} className="section_padding" style={{ background: 'var(--color-bg-alt)' }}>
@@ -56,14 +79,14 @@ export default function About({ id = 'about' }) {
             </div>
           </div>
 
-          {/* Right: Studio Photo Slideshow with Fade Animation */}
+          {/* Right: Portfolio Photo Slideshow with Fade Animation */}
           <div className="about_image_wrapper">
             <div className="about_slideshow_container">
-              {STUDIO_IMAGES.map((src, idx) => (
+              {slides.map((src, idx) => (
                 <img
-                  key={src}
+                  key={`${src}-${idx}`}
                   src={src}
-                  alt={`70 Studio Foto ${idx + 1}`}
+                  alt={`70 Studio Portofolio ${idx + 1}`}
                   className={`about_main_img ${idx === currentSlide ? fadeClass : 'about_slide_hidden'}`}
                   loading="lazy"
                 />

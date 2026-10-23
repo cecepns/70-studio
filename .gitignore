@@ -42,6 +42,11 @@ Thumbs.db
 # Vite cache
 .vite/
 
+# Backend
+backend/node_modules/
+backend/.env
+
 # Raw master photo assets (>2 GB camera files)
 # Web-optimized assets are served from public/
 assets/
+
