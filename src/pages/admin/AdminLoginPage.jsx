@@ -6,8 +6,8 @@ import { api } from '../../utils/api';
 import { API_ENDPOINTS } from '../../utils/endpoints';
 
 export default function AdminLoginPage() {
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -111,9 +111,6 @@ export default function AdminLoginPage() {
           </button>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-[#2a2a2a] text-center text-xs text-neutral-500">
-          <p>Kredensial Default: <strong className="text-neutral-400">admin / admin123</strong></p>
-        </div>
       </div>
     </div>
   );
